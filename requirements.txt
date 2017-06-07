@@ -1,3 +1,4 @@
 pycodestyle
 pytest
 pytest-spec
+pytest-pep8
