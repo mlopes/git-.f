@@ -11,3 +11,4 @@ usage () {
 }
 
 usage
+exit 1;

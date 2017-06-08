@@ -6,3 +6,8 @@ load test_helper
     run git .f
     [ $(expr "${lines[0]}" : "Usage: git .f <subcommand>") -ne 0 ]
 }
+
+@test "it exits with status 1 when called without parameters" {
+    run git .f
+    [ $status -eq 1 ]
+}
