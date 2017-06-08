@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
 
-echo "Usage: git .f - Will show a help screen"
+usage () {
+    echo "Usage: git .f <subcommand>"
+    echo "    git .f - Will show a help screen"
+}
+
+usage
