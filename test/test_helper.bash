@@ -14,7 +14,7 @@ setup () {
 
 teardown () {
 	cd $DOTF_PROJECT_ROOT
-    rmdir $RELATIVE_GIT_REPO_FIXTURE_PATH
+	rm -fr $RELATIVE_GIT_REPO_FIXTURE_PATH
 
     export PATH=$ORIGINAL_PATH
 }
