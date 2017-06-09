@@ -1,6 +1,10 @@
 #! /usr/bin/env bash
 
-git init
-echo "*" > .gitignore
-git add -f .gitignore
-git commit -m "Create .f repository"
+initialise_repository () {
+    git init
+    echo "*" > .gitignore
+    git add -f .gitignore
+    git commit -m "Create .f repository"
+}
+
+initialise_repository

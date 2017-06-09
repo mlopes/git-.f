@@ -20,6 +20,5 @@ fixtures
     run git ls-files .gitignore --error-unmatch
     [ $status -eq 0 ]
     run git diff --cached --exit-code --quiet .gitignore
-    echo $status;
     [ $status -eq 0 ]
 }
