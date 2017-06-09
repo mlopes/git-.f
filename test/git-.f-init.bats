@@ -17,4 +17,9 @@ fixtures
     run $PROJECT_SOURCE/git-.f-init
     run cat .gitignore
     [ $output = "*" ]
+    run git ls-files .gitignore --error-unmatch
+    [ $status -eq 0 ]
+    run git diff --cached --exit-code --quiet .gitignore
+    echo $status;
+    [ $status -eq 0 ]
 }
