@@ -22,3 +22,9 @@ fixtures
     run git diff --cached --exit-code --quiet .gitignore
     [ $status -eq 0 ]
 }
+
+@test "it print .f init usage help when called with -h" {
+	cd $GIT_REPO_FIXTURE_PATH
+    run git .f init -h
+    [ $output = "usage: git .f init [-h]" ]
+}

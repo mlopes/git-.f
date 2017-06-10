@@ -1,0 +1,7 @@
+* v0.0.1 -  [2/4] [50%]
+- [X] Initialise a repo using git .f init
+- [X] Add .gitignore file to repo, on init, ignoring all files
+- [ ] Add documentation to git .f init -h
+- [ ] Add manpage for  git .f init --help and git help .f init (if git is smart enough to go 2 levels deep)
+* v0.0.2 -  [0/1] [0%]
+- [ ] Enable adding files to the current branch 

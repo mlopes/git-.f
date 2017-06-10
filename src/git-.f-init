@@ -7,4 +7,12 @@ initialise_repository () {
     git commit -m "Create .f repository"
 }
 
-initialise_repository
+usage () {
+    echo "usage: git .f init [-h]"
+}
+
+if [ $1 == "-h"  ] ; then
+    usage
+else
+    initialise_repository
+fi
