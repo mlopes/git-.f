@@ -10,5 +10,25 @@ usage () {
     echo "    git .f baseadd - Adds changes to to the base branch and rebases the host branch"
 }
 
-usage
-exit 1;
+is_subcommand () {
+    valid_subcommands=( init )
+
+    if [ $# -eq 0 ]; then
+        return 1
+    fi
+
+    case "${valid_subcommands[@]}" in  *"$1"*) return 0 ;; esac
+    return 1
+}
+
+export GITDOTF_DIR=$(dirname "$(echo "$0" | sed -e 's,\\,/,g')")
+
+SUBCOMMAND="$1"; shift
+a=`is_subcommand $SUBCOMMAND`
+echo $a
+if is_subcommand $SUBCOMMAND ; then
+    . "$GITDOTF_DIR/git-.f-$SUBCOMMAND" $@
+else
+    usage
+    exit 1;
+fi
