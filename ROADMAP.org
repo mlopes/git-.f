@@ -1,8 +1,19 @@
-* v0.0.1 -  [2/4] [50%]
+* v0.0.1 -  [3/3] [100%]
 - [X] Initialise a repo using git .f init
 - [X] Add .gitignore file to repo, on init, ignoring all files
-- [ ] Add documentation to git .f init -h
-* v0.0.2 -  [0/1] [0%]
+- [X] Add documentation to git .f init -h
+* v0.0.2 -  [0/2] [0%]
 - [ ] Enable adding files to the current branch 
-* Sometime in the future -  [0/1] [0%]
+- [ ] Add documentation to git .f add -h
+* v0.0.3 -  [0/2] [0%]
+- [ ] Enable applying an existing .f repository to an existing home folder
+- [ ] Add documentation to git .f apply -h
+* v0.0.3 -  [0/2] [0%]
+- [ ] Enable commiting a change to the base branch (and rethink the command name baseadd sucks)
+- [ ] Add documentation to git .f baseadd -h
+* Sometime in the future -  [0/5] [0%]
+- [ ] Add manpage for  git .f --help and git help .f
 - [ ] Add manpage for  git .f init --help and git help .f init (if git is smart enough to go 2 levels deep)
+- [ ] Add manpage for  git .f add --help and git help .f add (if git is smart enough to go 2 levels deep)
+- [ ] Add manpage for  git .f apply --help and git help .f apply (if git is smart enough to go 2 levels deep)
+- [ ] Add manpage for  git .f baseadd --help and git help .f baseadd (if git is smart enough to go 2 levels deep)
