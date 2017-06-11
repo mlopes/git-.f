@@ -29,7 +29,7 @@ export GITDOTF_DIR=$(dirname "$(echo "$0" | sed -e 's,\\,/,g')")
 
 SUBCOMMAND="$1"; shift
 a=`is_subcommand $SUBCOMMAND`
-echo $a
+
 if is_subcommand $SUBCOMMAND ; then
     . "$GITDOTF_DIR/git-.f-$SUBCOMMAND" $@
 else
