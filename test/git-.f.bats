@@ -13,3 +13,10 @@ fixtures
     run git .f
     [ $status -eq 1 ]
 }
+
+@test "it prints out the version when called with -v or --version" {
+    run git .f -v
+    [ $output = ".f 0.0.1" ]
+    run git .f --version
+    [ $output = ".f 0.0.1" ]
+}

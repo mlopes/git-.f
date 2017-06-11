@@ -10,6 +10,10 @@ usage () {
     echo "    git .f baseadd - Adds changes to to the base branch and rebases the host branch"
 }
 
+version () {
+    echo ".f 0.0.1"
+}
+
 is_subcommand () {
     valid_subcommands=( init )
 
@@ -29,6 +33,17 @@ echo $a
 if is_subcommand $SUBCOMMAND ; then
     . "$GITDOTF_DIR/git-.f-$SUBCOMMAND" $@
 else
-    usage
-    exit 1;
+    option=$SUBCOMMAND
+
+    case "$option" in
+        "-v" | "--version" )
+            version
+             exit 0
+             ;;
+        * )
+            usage
+            exit 1;
+            ;;
+    esac
+
 fi
