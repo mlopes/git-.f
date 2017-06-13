@@ -15,7 +15,7 @@ version () {
 }
 
 is_subcommand () {
-    valid_subcommands=( init )
+    valid_subcommands=( init add )
 
     if [ $# -eq 0 ]; then
         return 1
