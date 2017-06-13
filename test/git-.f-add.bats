@@ -15,3 +15,17 @@ fixtures
     run git ls-files newfile --error-unmatch
     [ $status -eq 0 ]
 }
+
+@test "it add a specific file to the repository" {
+	cd $GIT_REPO_FIXTURE_PATH
+    run git .f init
+    echo "new file" > newfile
+    echo "another file" > anotherfile
+    run git .f add newfile
+    [ $status -eq 0 ]
+    echo $output
+    run git ls-files newfile --error-unmatch
+    [ $status -eq 0 ]
+    run git ls-files anotherfile --error-unmatch
+    [ $status -ne 0 ]
+}

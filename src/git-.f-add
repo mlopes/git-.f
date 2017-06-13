@@ -1,1 +1,7 @@
-git add -f .
+#!/usr/bin/env bash
+
+if [ $# -eq 0 ]; then
+    git add -f .
+else
+    git add -f $@
+fi
