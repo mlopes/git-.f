@@ -2,12 +2,13 @@
 - [X] Initialise a repo using git .f init
 - [X] Add .gitignore file to repo, on init, ignoring all files
 - [X] Add documentation to git .f init -h
-* v0.0.2 - .f add  [3/8] [37%]
+* v0.0.2 - .f add  [4/8] [50%]
 - [X] Add all files to the current branch
 - [X] Add only selected files to the current branch
 - [X] Forward arguments from .f add to git add
-- [ ] Commit staged files to the current branch
+- [X] Commit staged files to the current branch
 - [ ] Forward -m to git commit
+- [ ] Add -m option to all tests using git .f add except for "it commits the added files" where it tests it works without -m
 - [ ] Forward -o to git commit
 - [ ] Forward -q to git commit
 - [ ] Add documentation to git .f add -h
