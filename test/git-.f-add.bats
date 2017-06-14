@@ -11,10 +11,10 @@ fixtures
 
     echo "new file" > newfile
     run git .f add
-    [ $status -eq 0 ]
+    assert_success
 
     run git ls-files newfile --error-unmatch
-    [ $status -eq 0 ]
+    assert_success
 }
 
 @test "it add a specific file to the repository" {
@@ -24,11 +24,11 @@ fixtures
     echo "new file" > newfile
     echo "another file" > anotherfile
     run git .f add newfile
-    [ $status -eq 0 ]
+    assert_success
     run git ls-files newfile --error-unmatch
-    [ $status -eq 0 ]
+    assert_success
     run git ls-files anotherfile --error-unmatch
-    [ $status -ne 0 ]
+    assert_failure 1
 }
 
 
@@ -38,9 +38,9 @@ fixtures
 
     echo "new file" > newfile
     run git .f add newfile
-    [ $status -eq 0 ]
+    assert_success
     run git ls-files newfile --error-unmatch
-    [ $status -eq 0 ]
+    assert_success
     run git diff --cached --exit-code --quiet newfile
-    [ $status -eq 0 ]
+    assert_success
  }

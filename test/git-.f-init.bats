@@ -6,9 +6,9 @@ fixtures
 
 @test "it makes the folder a git repository" {
 	cd $GIT_REPO_FIXTURE_PATH
-	[ ! -d .git ]
+    assert_file_not_exist .git
     run git .f init
-	[ -d .git ]
+    assert_file_exist .git
 }
 
 
@@ -16,15 +16,15 @@ fixtures
 	cd $GIT_REPO_FIXTURE_PATH
     run git .f init
     run cat .gitignore
-    [ $output = "*" ]
+    assert_output "*"
     run git ls-files .gitignore --error-unmatch
-    [ $status -eq 0 ]
+    assert_success
     run git diff --cached --exit-code --quiet .gitignore
-    [ $status -eq 0 ]
+    assert_success
 }
 
 @test "it prints .f init usage help when called with -h" {
 	cd $GIT_REPO_FIXTURE_PATH
     run git .f init -h
-    [ "$output" = "usage: git .f init [-h]" ]
+    assert_output "usage: git .f init [-h]"
 }

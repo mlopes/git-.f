@@ -1,3 +1,7 @@
+load 'test_helper/bats-support/load'
+load 'test_helper/bats-assert/load'
+load 'test_helper/bats-file/load'
+
 fixtures () {
     GIT_REPO_FIXTURE_PATH="$BATS_TEST_DIRNAME/fakerepo"
     RELATIVE_GIT_REPO_FIXTURE_PATH="$(bats_trim_filename "$GIT_REPO_FIXTURE_PATH")"
