@@ -6,4 +6,4 @@ else
     git add -f $@
 fi
 
-git commit
+git commit -m "Default commit message"
