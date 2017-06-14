@@ -99,7 +99,12 @@ temp_make() {
   template+='-XXXXXXXXXX'
 
   local path
-  path="$(mktemp -d --tmpdir="$BATS_TMPDIR" -- "$template" 2>&1)"
+  if [ "$(uname -s)" == "Darwin" ]; then
+    path="$(mktemp -d --tmpdir="$BATS_TMPDIR" "$template" 2>&1)"
+  else
+    path="$(mktemp -d --tmpdir="$BATS_TMPDIR" -- "$template" 2>&1)"
+  fi
+
   if (( $? )); then
     echo "$path" \
       | batslib_decorate 'ERROR: temp_make' \
