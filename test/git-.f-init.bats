@@ -5,7 +5,6 @@ load test_helper
 fixtures
 
 @test "it makes the folder a git repository" {
-	cd $GIT_REPO_FIXTURE_PATH
     assert_file_not_exist .git
     run git .f init
     assert_file_exist .git
@@ -13,7 +12,6 @@ fixtures
 
 
 @test "it adds a .f .gitignore file to the repository" {
-	cd $GIT_REPO_FIXTURE_PATH
     run git .f init
     run cat .gitignore
     assert_output "*"
@@ -24,7 +22,6 @@ fixtures
 }
 
 @test "it prints .f init usage help when called with -h" {
-	cd $GIT_REPO_FIXTURE_PATH
     run git .f init -h
     assert_output "usage: git .f init [-h]"
 }

@@ -6,7 +6,6 @@ load test_helper
 fixtures
 
 @test "it adds a new file to the repository" {
-	cd $GIT_REPO_FIXTURE_PATH
     run git .f init
 
     echo "new file" > newfile
@@ -17,8 +16,7 @@ fixtures
     assert_success
 }
 
-@test "it add a specific file to the repository" {
-	cd $GIT_REPO_FIXTURE_PATH
+@test "it adds a specific file to the repository" {
     run git .f init
 
     echo "new file" > newfile
@@ -33,7 +31,6 @@ fixtures
 
 
 @test "it commits the added files" {
-	cd $GIT_REPO_FIXTURE_PATH
     run git .f init
 
     echo "new file" > newfile

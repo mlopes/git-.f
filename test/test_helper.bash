@@ -14,6 +14,7 @@ setup () {
     export PATH=$PATH:$PROJECT_SOURCE
 
     mkdir -p $GIT_REPO_FIXTURE_PATH
+	cd $GIT_REPO_FIXTURE_PATH
 }
 
 teardown () {
