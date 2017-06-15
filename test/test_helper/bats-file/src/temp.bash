@@ -100,7 +100,7 @@ temp_make() {
 
   local path
   if [ "$(uname -s)" == "Darwin" ]; then
-    path="$(mktemp -d --tmpdir="$BATS_TMPDIR" "$template" 2>&1)"
+    path="$(mktemp -d  --  "${BATS_TMPDIR}${template}" 2>&1)"
   else
     path="$(mktemp -d --tmpdir="$BATS_TMPDIR" -- "$template" 2>&1)"
   fi
