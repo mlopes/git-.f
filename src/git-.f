@@ -18,11 +18,11 @@ is_subcommand () {
     valid_subcommands=( init add )
 
     if [ $# -eq 0 ]; then
-        return 1
+        return 2
     fi
 
     case "${valid_subcommands[@]}" in  *"$1"*) return 0 ;; esac
-    return 1
+    return 2
 }
 
 export GITDOTF_DIR=$(dirname "$(echo "$0" | sed -e 's,\\,/,g')")
@@ -42,7 +42,7 @@ else
              ;;
         * )
             usage
-            exit 1;
+            exit 2;
             ;;
     esac
 

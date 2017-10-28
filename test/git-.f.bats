@@ -9,9 +9,9 @@ fixtures
     assert [ $(expr "${lines[0]}" : "Usage: git .f <subcommand>") -ne 0 ]
 }
 
-@test "it exits with status 1 when called without parameters" {
+@test "it exits with status 2 when called without parameters" {
     run git .f
-    assert_failure 1
+    assert_failure 2
 }
 
 @test "it prints out the version when called with -v or --version" {
