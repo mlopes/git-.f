@@ -1,0 +1,10 @@
+#! /usr/bin/env bash
+
+if [ $# -eq 0 ]; then
+    exit 2
+fi
+
+if [ -d ".git" ]; then
+  echo "A .git folder was found in `pwd`. This means the folder is already a git repository, cannot apply the .f repository."
+  exit 3;
+fi
