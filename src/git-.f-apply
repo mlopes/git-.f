@@ -1,7 +1,8 @@
 #! /usr/bin/env bash
 
 if [ $# -eq 0 ]; then
-    exit 2
+  echo "usage: git .f apply <name of the dotfiles repository to apply>"
+  exit 2
 fi
 
 if [ -d ".git" ]; then
