@@ -17,3 +17,14 @@ fixtures
   assert_failure 3
 }
 
+@test "it applies a specified repository to the current folder" {
+  assert_file_not_exist .git
+  TMP_REPO=$(temp_make)
+  cd $TMP_REPO
+  git init
+  cd $GIT_REPO_FIXTURE_PATH
+  run git .f apply $TMP_REPO
+  yes | rm -r -- "$TMP_REPO" 2>&1
+  assert_file_exist .git
+}
+
